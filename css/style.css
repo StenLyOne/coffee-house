@@ -262,6 +262,7 @@ header {
   width: 530px;
   position: absolute;
   max-width: 530px; 
+  z-index: 1000;
 }
 
 .main_text {
