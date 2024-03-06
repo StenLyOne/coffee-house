@@ -449,6 +449,7 @@ header {
 
   display: flex;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .about_img1 {
