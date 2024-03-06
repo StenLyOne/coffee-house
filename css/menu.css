@@ -1,0 +1,112 @@
+.burger_menu_container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #e1d4c9;
+    z-index: -1;
+    margin-top: 100px;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Плавный переход для изменения непрозрачности */
+    pointer-events: none; /* Чтобы клики не проходили сквозь меню, когда оно скрыто */
+  }
+  
+  .burger_menu_container_activ {
+  
+    opacity: 1;
+    z-index: 1000;
+    pointer-events: auto; /* Включаем обработку событий, когда меню отображается */
+  }
+  
+  .modal {
+    display: flex;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -60%);
+    z-index: 1001;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .modal p{
+    font-size: 32px;
+    line-height: 125%;
+    font-weight: 600;
+    margin-bottom: 60px;
+  }
+
+  .p-btn {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .additives-number {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+@media (max-width: 795px) {
+    
+  
+    .burger_menu {
+      width: 44px;
+      height: 44px;
+      gap: 7px;
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      border: 1px solid rgba(64, 63, 61, 1);
+      border-radius: 100px;
+  
+      position: relative;
+    }
+  
+    .burger_menu_vector {
+      display: block;
+  
+      width: 16px;
+      height: 2px;
+  
+      background-color: #403f3d;
+  
+      border-radius: 100px;
+      transition: transform 0.3s ease;
+    }
+  
+    .line1 {
+      display: inline-block;
+      position: absolute;
+  
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+  
+    .line2 {
+      display: inline-block;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease;
+    }
+  
+    .btn_menu {
+      display: none;
+    }
+  
+
+}
+
+@media (max-width: 795px) {
+
+    .modal p{
+        font-size: 32px;
+        line-height: 125%;
+        font-weight: 600;
+        margin-bottom: 60px;
+      }
+}
