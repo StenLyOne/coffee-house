@@ -52,7 +52,7 @@ if (slider && progress.length > 0 && favoriteWraper) {
             ele.style.width = '0%';
         });
 
-        if (width === 348) {
+        if (width === 348 || width < 348) {
             const leftNow = parseInt(slider.style.left) || 0;
             slider.style.left = (leftNow - 388) + 'px';
             if (parseInt(slider.style.left) < -776) {
@@ -73,7 +73,7 @@ if (slider && progress.length > 0 && favoriteWraper) {
             }
         }
 
-        if (width === 348) {
+        if (width === 348 || width < 348) {
             const leftNow = parseInt(slider.style.left) || 0;
             slider.style.left = (leftNow + 388) + 'px';
             if (parseInt(slider.style.left) > 0) {
