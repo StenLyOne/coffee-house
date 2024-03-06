@@ -840,7 +840,8 @@ footer {
   }
 
   .about_img_container {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .about_img2 {
