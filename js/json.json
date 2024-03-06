@@ -4,7 +4,7 @@
       "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
       "price": "7.00",
       "category": "coffee",
-      "img": "/Coffee-House/img/coffee-1.jpg",
+      "img": "/coffee-house/img/coffee-1.jpg",
       "id" : "1",
       "sizes": {
         "s": {
@@ -41,7 +41,7 @@
       "description": "Classic coffee with milk and Kahlua liqueur under a cap of frothed milk",
       "price": "7.00",
       "category": "coffee",
-      "img": "/Coffee-House/img/coffee-2.jpg",
+      "img": "/coffee-house/img/coffee-2.jpg",
       "id" : "2",
       "sizes": {
         "s": {
@@ -78,7 +78,7 @@
       "description": "Espresso with frothed milk, cream and aromatic honey",
       "price": "5.50",
       "category": "coffee",
-      "img": "/Coffee-House/img/coffee-3.jpg",
+      "img": "/coffee-house/img/coffee-3.jpg",
       "id" : "3",
       "sizes": {
         "s": {
@@ -115,7 +115,7 @@
       "description": "Cappuccino with soft thick foam in summer version with ice",
       "price": "5.00",
       "category": "coffee",
-      "img": "/Coffee-House/img/coffee-4.jpg",
+      "img": "/coffee-house/img/coffee-4.jpg",
       "id" : "4",
       "sizes": {
         "s": {
@@ -152,7 +152,7 @@
       "description": "Classic black coffee",
       "price": "4.50",
       "category": "coffee",
-      "img": "/Coffee-House/img/coffee-5.jpg",
+      "img": "/coffee-house/img/coffee-5.jpg",
       "id" : "5",
       "sizes": {
         "s": {
@@ -189,7 +189,7 @@
       "description": "Espresso coffee with the addition of steamed milk and dense milk foam",
       "price": "5.50",
       "category": "coffee",
-      "img": "/Coffee-House/img/coffee-6.jpg",
+      "img": "/coffee-house/img/coffee-6.jpg",
       "id" : "6",
       "sizes": {
         "s": {
@@ -226,7 +226,7 @@
       "description": "Espresso with frothed milk and chocolate",
       "price": "5.50",
       "category": "coffee",
-      "img": "/Coffee-House/img/coffee-7.jpg",
+      "img": "/coffee-house/img/coffee-7.jpg",
       "id" : "7",
       "sizes": {
         "s": {
@@ -263,7 +263,7 @@
       "description": "Fragrant black coffee with cognac and whipped cream",
       "price": "6.50",
       "category": "coffee",
-      "img": "/Coffee-House/img/coffee-8.jpg",
+      "img": "/coffee-house/img/coffee-8.jpg",
       "id" : "8",
       "sizes": {
         "s": {
@@ -300,7 +300,7 @@
       "description": "Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint",
       "price": "4.50",
       "category": "tea",
-      "img": "/Coffee-House/img/tea-1.jpg",
+      "img": "/coffee-house/img/tea-1.jpg",
       "id" : "9",
       "sizes": {
         "s": {
@@ -337,7 +337,7 @@
       "description": "Original black tea with fresh ginger, lemon and honey",
       "price": "5.00",
       "category": "tea",
-      "img": "/Coffee-House/img/tea-2.jpg",
+      "img": "/coffee-house/img/tea-2.jpg",
       "id" : "10",
       "sizes": {
         "s": {
@@ -374,7 +374,7 @@
       "description": "Invigorating black tea with cranberry and honey",
       "price": "5.00",
       "category": "tea",
-      "img": "/Coffee-House/img/tea-3.jpg",
+      "img": "/coffee-house/img/tea-3.jpg",
       "id" : "11",
       "sizes": {
         "s": {
@@ -411,7 +411,7 @@
       "description": "Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon",
       "price": "5.50",
       "category": "tea",
-      "img": "/Coffee-House/img/tea-4.jpg",
+      "img": "/coffee-house/img/tea-4.jpg",
       "id" : "12",
       "sizes": {
         "s": {
@@ -448,7 +448,7 @@
       "description": "Philadelphia cheese with lemon zest on a light sponge cake and red currant jam",
       "price": "3.50",
       "category": "dessert",
-      "img": "/Coffee-House/img/dessert-1.jpg",
+      "img": "/coffee-house/img/dessert-1.jpg",
       "id" : "13",
       "sizes": {
         "s": {
@@ -485,7 +485,7 @@
       "description": "Layer cake with cream cheese frosting",
       "price": "4.00",
       "category": "dessert",
-      "img": "/Coffee-House/img/dessert-2.jpg",
+      "img": "/coffee-house/img/dessert-2.jpg",
       "id" : "14",
       "sizes": {
         "s": {
@@ -522,7 +522,7 @@
       "description": "Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar",
       "price": "4.50",
       "category": "dessert",
-      "img": "/Coffee-House/img/dessert-3.jpg",
+      "img": "/coffee-house/img/dessert-3.jpg",
       "id" : "15",
       "sizes": {
         "s": {
@@ -559,7 +559,7 @@
       "description": "Delicate creamy dessert in a caramel basket with wild berries",
       "price": "4.00",
       "category": "dessert",
-      "img": "/Coffee-House/img/dessert-4.jpg",
+      "img": "/coffee-house/img/dessert-4.jpg",
       "id" : "16",
       "sizes": {
         "s": {
@@ -596,7 +596,7 @@
       "description": "Tender pancakes with strawberry jam and fresh strawberries",
       "price": "4.50",
       "category": "dessert",
-      "img": "/Coffee-House/img/dessert-5.jpg",
+      "img": "/coffee-house/img/dessert-5.jpg",
       "id" : "17",
       "sizes": {
         "s": {
@@ -633,7 +633,7 @@
       "description": "Classic honey cake with delicate custard",
       "price": "4.50",
       "category": "dessert",
-      "img": "/Coffee-House/img/dessert-6.jpg",
+      "img": "/coffee-house/img/dessert-6.jpg",
       "id" : "18",
       "sizes": {
         "s": {
@@ -670,7 +670,7 @@
       "description": "Cake with hot chocolate filling and nuts with dried apricots",
       "price": "5.50",
       "category": "dessert",
-      "img": "/Coffee-House/img/dessert-7.jpg",
+      "img": "/coffee-house/img/dessert-7.jpg",
       "id" : "19",
       "sizes": {
         "s": {
@@ -707,7 +707,7 @@
       "description": "A combination of thin sponge cake with cherry jam and light chocolate mousse",
       "price": "6.50",
       "category": "dessert",
-      "img": "/Coffee-House/img/dessert-8.jpg",
+      "img": "/coffee-house/img/dessert-8.jpg",
       "id" : "20",
       "sizes": {
         "s": {
