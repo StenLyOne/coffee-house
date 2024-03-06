@@ -197,7 +197,7 @@ links.forEach( ele => {
 
 async function loadJSON() {
     try {
-        const response = await fetch('../coffee-House/js/json.json');
+        const response = await fetch('/coffee-house/js/json.json');
         const data = await response.json();
 
         function tabs() {
