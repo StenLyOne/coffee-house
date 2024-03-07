@@ -78,7 +78,7 @@
       "description": "Espresso with frothed milk, cream and aromatic honey",
       "price": "5.50",
       "category": "coffee",
-      "img": ".img/coffee-3.jpg",
+      "img": "./img/coffee-3.jpg",
       "id" : "3",
       "sizes": {
         "s": {

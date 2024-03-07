@@ -160,7 +160,7 @@ menuBurger.forEach((ele,index) => {
 
 links.forEach( ele => { 
     ele.addEventListener('click', () => {
-        menuBurgerContainer[0].classList.remove('burger_menu_container_activ');
+        menuBurgerContainer[index].classList.remove('burger_menu_container_activ');
         // menuBurgerContainer[1].classList.remove('burger_menu_container_activ');
         body.forEach(ele => {
             ele.style.overflow = '';
