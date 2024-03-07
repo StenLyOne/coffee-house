@@ -195,7 +195,7 @@ links.forEach( ele => {
 
 async function loadJSON() {
     try {
-        const response = await fetch('/js/json.json');
+        const response = await fetch('./js/json.json');
         const data = await response.json();
 
         function tabs() {
