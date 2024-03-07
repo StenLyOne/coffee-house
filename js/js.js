@@ -7,14 +7,20 @@ let progress = document.querySelectorAll('.progress');
 let favoriteWraper = document.querySelector('.favorite-coffee-wraper');
 let intervalId;
 let setIntervalNext;
+let touchstartX = 0;
+let touchendX = 0;
+let threshold = 50; // Минимальное расстояние для определения свайпа
 let index = 0;
 
 if (slider) {
+
     setIntervalNext = setInterval(nextSlider, 5000);
 
-    // Добавляем слушатели событий для свайпов на всё окно браузера
-    window.addEventListener('touchstart', handleTouchStart, false);        
-    window.addEventListener('touchmove', handleTouchMove, false);
+    
+
+    slider.addEventListener('touchstart', handleTouchStart);
+    slider.addEventListener('touchmove', handleTouchMove);
+    slider.addEventListener('touchend', handleTouchEnd);
 
     function handleTouchStart(event) {
         touchstartX = event.touches[0].clientX;
@@ -22,15 +28,20 @@ if (slider) {
 
     function handleTouchMove(event) {
         touchendX = event.touches[0].clientX;
-        handleGesture();
     }
 
-    function handleGesture() {
-        if (touchendX < touchstartX) {
-            nextSlider();
-        } else if (touchendX > touchstartX) {
-            prevSlider();
+    function handleTouchEnd() {
+        let deltaX = touchendX - touchstartX;
+        if (Math.abs(deltaX) > threshold) {
+            if (deltaX > 0) {
+                prevSlider(); // Свайп вправо
+            } else {
+                nextSlider(); // Свайп влево
+            }
         }
+        // Сброс значений
+        touchstartX = 0;
+        touchendX = 0;
     }
 
     function nextSlider() {
@@ -42,7 +53,7 @@ if (slider) {
                 slider.style.left = '0px';
             }
         }
-        
+
         if (width === 348 || width < 348) {
             const leftNow = parseInt(slider.style.left) || 0;
             slider.style.left = (leftNow - 388) + 'px';
@@ -50,7 +61,6 @@ if (slider) {
                 slider.style.left = '0px';
             }
         }
-        
         index++;
         if (index > 2) {
             index = 0;
@@ -58,9 +68,9 @@ if (slider) {
         progress.forEach(ele => {
             ele.style.width = '0%';
         });
-        
-        resetInterval();
-        animateProgress(index);
+
+        resetInterval(); // Сброс интервала при переключении слайдов
+        animateProgress(index); // Запуск анимации прогресса для нового слайда
     }
 
     function prevSlider() {
@@ -88,27 +98,27 @@ if (slider) {
         progress.forEach(ele => {
             ele.style.width = '0%';
         });
-        resetInterval();
-        animateProgress(index);
+        resetInterval(); // Сброс интервала при переключении слайдов
+        animateProgress(index); // Запуск анимации прогресса для нового слайда
     }
 
     function animateProgress(index) {
         let widthPercentage = 1;
         const intervalDuration = 5000 / 100; // 5 секунд разделить на 100 интервалов
-        if (intervalId) { 
-            clearInterval(intervalId);
+        if (intervalId) { // Проверка наличия текущего интервала
+            clearInterval(intervalId); // Остановка предыдущего интервала
         }
 
         if (index > 2) {
             index = 0;
         }
-
-        intervalId = setInterval(() => {
+        // Увеличение ширины прогресса каждую секунду
+        intervalId = setInterval(() => { // Запуск нового интервала
             progress[index].style.width = widthPercentage + '%';
             widthPercentage++;
             if (widthPercentage > 100) {
                 widthPercentage = 1;
-                clearInterval(intervalId);
+                clearInterval(intervalId); // Остановка интервала по завершении анимации
                 progress.forEach(ele => {
                     ele.style.width = '0%';
                 });
