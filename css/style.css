@@ -262,7 +262,7 @@ header {
   width: 530px;
   position: absolute;
   max-width: 530px; 
-  z-index: 1000;
+  z-index: 999;
 }
 
 .main_text {
@@ -606,7 +606,8 @@ header {
   cursor: pointer;
 }
 
-.button_store1:hover {
+.button_store1:hover,
+.button_store1::after {
   transition: 200ms;
   transition-timing-function: ease-in-out;
   background-color: #665f55;
@@ -618,7 +619,8 @@ header {
   }
 }
 
-.button_store2:hover {
+.button_store2:hover,
+.button_store2::after {
   transition: 200ms;
   transition-timing-function: ease-in-out;
   background-color: #665f55;
@@ -630,7 +632,8 @@ header {
   }
 }
 
-.button_store_1:hover {
+.button_store_1:hover,
+.button_store_1::after{
   .apple_hover {
     transition: 200ms;
     transition-timing-function: ease-in-out;
@@ -639,7 +642,8 @@ header {
   }
 }
 
-.button_store2:hover {
+.button_store2:hover,
+.button_store2::after {
   .google_hover {
     transition: 200ms;
     transition-timing-function: ease-in-out;
@@ -648,7 +652,8 @@ header {
   }
 }
 
-.button_store_2:hover {
+.button_store_2:hover,
+.button_store_2::after{
   .google_hover {
     transition: 200ms;
     transition-timing-function: ease-in-out;

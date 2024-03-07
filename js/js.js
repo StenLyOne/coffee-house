@@ -1,36 +1,34 @@
 
 
-// //////////////////////////////////////// SLIDER SLIDER SLIDER 
+//////////////////////////////////////// SLIDER SLIDER SLIDER 
 
-const slider = document.querySelector('.coffee-cards-slider');
-const progress = document.querySelectorAll('.progress');
-const favoriteWraper = document.querySelector('.favorite-coffee-wraper');
+let slider = document.querySelector('.coffee-cards-slider');
+let progress = document.querySelectorAll('.progress');
+let favoriteWraper = document.querySelector('.favorite-coffee-wraper');
+let intervalId;
+let setIntervalNext;
+let index = 0;
 
-if (slider && progress.length > 0 && favoriteWraper) {
-    let setIntervalNext = setInterval(nextSlider, 5000);
+if (slider) {
+    setIntervalNext = setInterval(nextSlider, 5000);
 
-    let index = 0;
-    let intervalId;
-    let touchstartX = 0;
-    let touchendX = 0;
+    // Добавляем слушатели событий для свайпов на всё окно браузера
+    window.addEventListener('touchstart', handleTouchStart, false);        
+    window.addEventListener('touchmove', handleTouchMove, false);
 
-    if (slider) {
-        slider.addEventListener('touchstart', function(event) {
-            touchstartX = event.touches[0].clientX;
-        });
+    function handleTouchStart(event) {
+        touchstartX = event.touches[0].clientX;
+    }
 
-        slider.addEventListener('touchend', function(event) {
-            touchendX = event.changedTouches[0].clientX;
-            handleGesture();
-        });
+    function handleTouchMove(event) {
+        touchendX = event.touches[0].clientX;
+        handleGesture();
     }
 
     function handleGesture() {
         if (touchendX < touchstartX) {
             nextSlider();
-        }
-
-        if (touchendX > touchstartX) {
+        } else if (touchendX > touchstartX) {
             prevSlider();
         }
     }
@@ -44,14 +42,7 @@ if (slider && progress.length > 0 && favoriteWraper) {
                 slider.style.left = '0px';
             }
         }
-        index++;
-        if (index > 2) {
-            index = 0;
-        }
-        progress.forEach(ele => {
-            ele.style.width = '0%';
-        });
-
+        
         if (width === 348 || width < 348) {
             const leftNow = parseInt(slider.style.left) || 0;
             slider.style.left = (leftNow - 388) + 'px';
@@ -59,8 +50,17 @@ if (slider && progress.length > 0 && favoriteWraper) {
                 slider.style.left = '0px';
             }
         }
-        resetInterval(); // Сброс интервала при переключении слайдов
-        animateProgress(index); // Запуск анимации прогресса для нового слайда
+        
+        index++;
+        if (index > 2) {
+            index = 0;
+        }
+        progress.forEach(ele => {
+            ele.style.width = '0%';
+        });
+        
+        resetInterval();
+        animateProgress(index);
     }
 
     function prevSlider() {
@@ -79,7 +79,6 @@ if (slider && progress.length > 0 && favoriteWraper) {
             if (parseInt(slider.style.left) > 0) {
                 slider.style.left = '-776px';
             }
-
         }
 
         index--;
@@ -89,27 +88,27 @@ if (slider && progress.length > 0 && favoriteWraper) {
         progress.forEach(ele => {
             ele.style.width = '0%';
         });
-        resetInterval(); // Сброс интервала при переключении слайдов
-        animateProgress(index); // Запуск анимации прогресса для нового слайда
+        resetInterval();
+        animateProgress(index);
     }
 
     function animateProgress(index) {
         let widthPercentage = 1;
         const intervalDuration = 5000 / 100; // 5 секунд разделить на 100 интервалов
-        if (intervalId) { // Проверка наличия текущего интервала
-            clearInterval(intervalId); // Остановка предыдущего интервала
+        if (intervalId) { 
+            clearInterval(intervalId);
         }
 
         if (index > 2) {
             index = 0;
         }
-        // Увеличение ширины прогресса каждую секунду
-        intervalId = setInterval(() => { // Запуск нового интервала
+
+        intervalId = setInterval(() => {
             progress[index].style.width = widthPercentage + '%';
             widthPercentage++;
             if (widthPercentage > 100) {
                 widthPercentage = 1;
-                clearInterval(intervalId); // Остановка интервала по завершении анимации
+                clearInterval(intervalId);
                 progress.forEach(ele => {
                     ele.style.width = '0%';
                 });
@@ -138,7 +137,6 @@ const menuBurgerContainer = document.querySelectorAll('.burger_menu_container')
 const links = document.querySelectorAll('.modal a')
 const body = document.querySelectorAll('body');
 const burgerVector = document.querySelectorAll('.burger_menu_vector')
-console.log(menuBurgerContainer)
 
 menuBurger.forEach((ele,index) => {
     
@@ -389,7 +387,15 @@ async function loadJSON() {
 
 window.onload = async () => {
     try {
-        await loadJSON(); // Ожидание загрузки данных
+        // Проверяем, есть ли на странице элементы, с которыми работает скрипт
+        const menuGrid = document.querySelector('.menu_grid');
+        if (menuGrid) {
+            // Если элементы есть, загружаем данные и устанавливаем обработчики
+            await loadJSON(); // Ожидание загрузки данных
+        } else {
+            // Если элементы отсутствуют, не выполняем действий скрипта
+            console.log('Скрипт не выполняется на данной странице');
+        }
     } catch (error) {
         console.error('Ошибка загрузки данных:', error);
     }
@@ -398,20 +404,24 @@ window.onload = async () => {
 // Обработчик клика на overlay
 const overlay = document.querySelector('.overlay');
 const btnModal = document.querySelector('.btn-modal1');
-btnModal.addEventListener('click', () => {
-    overlay.style.display = 'none';
 
-    const sizeCost = document.querySelectorAll('.size-cost');
-    sizeCost.forEach(ele => {
-        ele.classList.remove('btn_tabs-menu-activ')
-        sizeCost[0].classList.add('btn_tabs-menu-activ')
-    })
+if (btnModal && overlay) {
+    btnModal.addEventListener('click', () => {
+        overlay.style.display = 'none';
 
-    const additives = document.querySelectorAll('.additives')
+        const sizeCost = document.querySelectorAll('.size-cost');
+        sizeCost.forEach(ele => {
+            ele.classList.remove('btn_tabs-menu-activ')
+            sizeCost[0].classList.add('btn_tabs-menu-activ')
+        })
+
+        const additives = document.querySelectorAll('.additives')
+        
+        additives.forEach(ele => {
+            ele.classList.remove('btn_tabs-menu-activ')
+        })
+    });
+}
     
-    additives.forEach(ele => {
-        ele.classList.remove('btn_tabs-menu-activ')
-    })
-});
 
 
