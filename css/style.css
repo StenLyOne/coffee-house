@@ -164,6 +164,9 @@ header {
   align-items: center;
 
   margin: 20px 0px;
+
+  position: relative;
+  z-index: 1001;
 }
 
 .header_text {

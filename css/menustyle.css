@@ -309,6 +309,9 @@ header {
   align-items: center;
 
   margin: 20px 0px;
+
+  position: relative;
+  z-index: 1001;
 }
 
 .header_text {
@@ -598,6 +601,7 @@ footer {
 
   border-radius: 40px;
   background: var(--background-container, #665f55);
+  
 }
 
 .footer_container {

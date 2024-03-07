@@ -6,7 +6,6 @@
     right: 0;
     background: #e1d4c9;
     z-index: -1;
-    margin-top: 100px;
     opacity: 0;
     transition: opacity 0.5s ease; /* Плавный переход для изменения непрозрачности */
     pointer-events: none; /* Чтобы клики не проходили сквозь меню, когда оно скрыто */
